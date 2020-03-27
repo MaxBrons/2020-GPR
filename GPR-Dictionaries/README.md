@@ -1,13 +1,13 @@
 #Dictionaries opdracht
 
-Weapons opdracht input:
- 1 = Small Machine Gun
- 2 = Asault Rifle
- 3 = Light Machine Gun
- spatie = shieten
+Weapons opdracht input:<br>
+ 1 = Small Machine Gun<br>
+ 2 = Asault Rifle<br>
+ 3 = Light Machine Gun<br>
+ spatie = shieten<br>
 
-Iventory opdracht input:
- 1 = knives toevoegen aan je inventory
- 2 = health potion toevoegen aan je inventory
- 3 = damage potion toevoegen aan je inventory
- spatie = verwijder van elk item 1
+Iventory opdracht input:<br>
+ 1 = knives toevoegen aan je inventory<br>
+ 2 = health potion toevoegen aan je inventory<br>
+ 3 = damage potion toevoegen aan je inventory<br>
+ spatie = verwijder van elk item 1<br>
