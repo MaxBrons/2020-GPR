@@ -15,4 +15,14 @@ public class Item
     {
         return amount;
     }
+
+    public void AddAmount(int anAmount)
+    {
+        amount += anAmount;
+    }
+
+    public void RemoveAmount(int anAmount)
+    {
+        amount -= anAmount;
+    }
 }
