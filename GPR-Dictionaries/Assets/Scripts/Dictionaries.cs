@@ -28,14 +28,10 @@ public class Dictionaries : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) SetCurrentWeapon(Weapons.AR);
         if (Input.GetKeyDown(KeyCode.Alpha3)) SetCurrentWeapon(Weapons.LMG);
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            foreach(KeyValuePair<Weapons, int> k in _Weapons) 
-            {
-                if(currentWeapon == k.Key) {
-                    _Weapons[k.Key] -= 1;
-                    Debug.Log(currentWeapon + " " + _Weapons[k.Key]);
-                }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if(_Weapons[currentWeapon] > 0) {
+                _Weapons[currentWeapon] -= 1;
+                Debug.Log("Current weapon: " + currentWeapon + " " + _Weapons[currentWeapon]);
             }
         }
     }
