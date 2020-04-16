@@ -6,10 +6,12 @@ public class StateMachine : MonoBehaviour
 {
     public event Action<Enemy, GameObject> PlayerDetected;
     public event Action<Enemy> PlayerUndetected;
+    public event Action<Enemy> AttackPlayer;
     [SerializeField] private Enemy enemy;
     private GameObject currentTarget;
     public enum EnemyStates {
         IDLE,
+        CHASE,
         ATTACK
     }
 
@@ -18,7 +20,10 @@ public class StateMachine : MonoBehaviour
     void Update() {
         switch (currentState) {
             case EnemyStates.ATTACK:
-                PlayerDetected?.Invoke(enemy,currentTarget);
+                AttackPlayer?.Invoke(enemy);
+                break;
+            case EnemyStates.CHASE:
+                PlayerDetected?.Invoke(enemy, currentTarget);
                 break;
             case EnemyStates.IDLE:
                 PlayerUndetected?.Invoke(enemy);
@@ -31,5 +36,10 @@ public class StateMachine : MonoBehaviour
         if (target) {
             currentTarget = target;
         }
+    }
+
+    public EnemyStates GetState()
+    {
+        return currentState;
     }
 }

@@ -11,8 +11,8 @@ public class PlayerDetection : MonoBehaviour
     {
         Collider[] inRangeObjects = Physics.OverlapSphere(transform.position, 25, layerMask);
         if (inRangeObjects.Length > 0) {
-            if (stateMachine) {
-                stateMachine.ChangeState(StateMachine.EnemyStates.ATTACK,inRangeObjects[0].gameObject);
+            if (stateMachine.GetState() != StateMachine.EnemyStates.ATTACK) {
+                stateMachine?.ChangeState(StateMachine.EnemyStates.CHASE,inRangeObjects[0].gameObject);
             }
         }
         else {

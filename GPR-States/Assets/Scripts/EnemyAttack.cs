@@ -7,18 +7,15 @@ public class EnemyAttack : MonoBehaviour
 
     [SerializeField] private StateMachine stateMachine;
     private void OnEnable() {
-        stateMachine.PlayerDetected += Attack;
+        stateMachine.AttackPlayer += Attack;
     }
 
     private void OnDisable() {
-        stateMachine.PlayerDetected -= Attack;
+        stateMachine.AttackPlayer -= Attack;
     }
 
-    private void Attack(Enemy enemy, GameObject target) {
-        enemy.GetNavmeshAgent().SetDestination(target.transform.position);
-        if ((enemy.GetNavmeshAgent().destination - enemy.transform.position).magnitude < 2) {
-            Debug.Log("Enemy came to close");
-            Destroy(enemy.gameObject);
-        }
+    private void Attack(Enemy enemy) {
+        Debug.Log("Enemy came to close");
+        Destroy(enemy.gameObject);
     }
 }
